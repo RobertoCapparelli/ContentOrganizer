@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\private\\contentorganizersubsystem.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\intermediate\\build\\win64\\x64\\toolwidgetsexerciseseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\contentorganizer\\definitions.contentorganizer.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizersubsystem.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizergraph.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizergraph.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizersubsystem.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizerlibrary.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\assetregistrymodule.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\iassetregistry.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\misc\\assetregistryinterface.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetregistry\\uht\\iassetregistry.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

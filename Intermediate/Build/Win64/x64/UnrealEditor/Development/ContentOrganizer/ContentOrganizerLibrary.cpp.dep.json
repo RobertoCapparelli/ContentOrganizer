@@ -1,0 +1,41 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\private\\contentorganizerlibrary.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\intermediate\\build\\win64\\x64\\toolwidgetsexerciseseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\contentorganizer\\definitions.contentorganizer.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizerlibrary.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerlibrary.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizergraph.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizergraph.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\foldernode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizernode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizernode.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\foldernode.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\filternode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\filternode.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\editor\\editorscriptingutilities\\source\\editorscriptingutilities\\public\\editorassetlibrary.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\editor\\editorscriptingutilities\\intermediate\\build\\win64\\unrealeditor\\inc\\editorscriptingutilities\\uht\\editorassetlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\assetregistrymodule.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\iassetregistry.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\misc\\assetregistryinterface.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetregistry\\uht\\iassetregistry.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\developer\\merge\\public\\merge.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

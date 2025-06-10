@@ -1,0 +1,20 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\private\\wip\\contentorganizergraphnode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\intermediate\\build\\win64\\x64\\toolwidgetsexerciseseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\contentorganizer\\definitions.contentorganizer.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\private\\wip\\contentorganizergraphnode.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\grapheditor\\public\\sgraphnode.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\grapheditor\\public\\snodepanel.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\public\\diffresults.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\grapheditor\\public\\marqueeoperation.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\grapheditor\\public\\sgraphpin.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\layout\\swrapbox.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,26 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ContentOrganizer.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Intermediate\Build\Win64\x64\ToolWidgetsExercisesEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\Module.ContentOrganizer.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ATA_ContentOrganizer.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\COAssetActionsRegistrar.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizer.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerAsset.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerAssetFactory.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerGraph.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerLibrary.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerNode.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerSchema.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerSubsystem.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\FilterNode.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\FolderNode.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerGraphNode.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\ContentOrganizerNodeFactory.cpp.obj"
+"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\Default.rc2.res"
+/OUT:"C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\x64\UnrealEditor\Development\ContentOrganizer\UnrealEditor-ContentOrganizer.lib"

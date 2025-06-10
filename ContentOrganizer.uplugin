@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ContentOrganizer",
+	"Description": "Tool to organize assets using graph logic.",
+	"Category": "Content Browser",
+	"CreatedBy": "Capparelli Roberto",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ContentOrganizer",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

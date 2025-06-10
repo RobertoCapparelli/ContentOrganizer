@@ -1,0 +1,29 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ContentOrganizer.cpp.obj": [
+			"ContentOrganizer.init.gen.cpp.obj",
+			"ContentOrganizerAsset.gen.cpp.obj",
+			"ContentOrganizerAssetFactory.gen.cpp.obj",
+			"ContentOrganizerGraph.gen.cpp.obj",
+			"ContentOrganizerLibrary.gen.cpp.obj",
+			"ContentOrganizerNode.gen.cpp.obj",
+			"ContentOrganizerSchema.gen.cpp.obj",
+			"FilterNode.gen.cpp.obj",
+			"FolderNode.gen.cpp.obj",
+			"Ata_ContentOrganizer.cpp.obj",
+			"COAssetActionsRegistrar.cpp.obj",
+			"ContentOrganizer.cpp.obj",
+			"ContentOrganizerAsset.cpp.obj",
+			"ContentOrganizerAssetFactory.cpp.obj",
+			"ContentOrganizerGraph.cpp.obj",
+			"ContentOrganizerLibrary.cpp.obj",
+			"ContentOrganizerNode.cpp.obj",
+			"ContentOrganizerSchema.cpp.obj",
+			"FilterNode.cpp.obj",
+			"FolderNode.cpp.obj",
+			"ContentOrganizerGraphNode.cpp.obj",
+			"ContentOrganizerNodeFactory.cpp.obj"
+		]
+	}
+}
