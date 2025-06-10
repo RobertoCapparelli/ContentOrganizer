@@ -9,7 +9,13 @@
             "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizerasset.h",
             "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizergraph.h",
             "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizergraph.generated.h",
-            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerasset.generated.h"
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerasset.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizerschema.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerschema.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\foldernode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizernode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizernode.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\foldernode.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

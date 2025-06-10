@@ -50,7 +50,15 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\projects\\public\\versescope.h",
-            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h"
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\referencechainsearch.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\hal\\threadheartbeat.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\garbagecollectionhistory.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\fastreferencecollector.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\garbagecollectionschema.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\versetypesfwd.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\dynamicallytypedvalue.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\gcobjectinfo.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

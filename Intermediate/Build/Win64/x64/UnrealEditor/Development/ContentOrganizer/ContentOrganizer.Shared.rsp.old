@@ -285,6 +285,11 @@
 /I "C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Intermediate\Build\Win64\UnrealEditor\Inc\ContentOrganizer\UHT"
 /I "C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Source"
 /I "C:\Users\39345\Desktop\Progetti Unreal\ToolWidgetsExercises\Plugins\ContentOrganizer\Source\ContentOrganizer\Public"
+/I "..\Plugins\Editor\EditorScriptingUtilities\Intermediate\Build\Win64\UnrealEditor\Inc\EditorScriptingUtilities\UHT"
+/I "..\Plugins\Editor\EditorScriptingUtilities\Source"
+/I "..\Plugins\Editor\EditorScriptingUtilities\Source\EditorScriptingUtilities\Public"
+/I "..\Intermediate\Build\Win64\UnrealEditor\Inc\StaticMeshEditor\UHT"
+/I "Editor\StaticMeshEditor\Public"
 /external:W0
 /external:I "ThirdParty\LibTiff\Source\Win64"
 /external:I "ThirdParty\LibTiff\Source"

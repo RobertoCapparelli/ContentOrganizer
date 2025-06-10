@@ -16,6 +16,8 @@
 #include "Interfaces/IPluginManager.h"
 #include "Modules/ModuleManager.h"
 #include "Styling/SlateStyleRegistry.h"
+#include "UObject/ReferenceChainSearch.h"
+#include "UObject/GarbageCollection.h"
 
 #define LOCTEXT_NAMESPACE "FContentOrganizerModule"
 
@@ -69,13 +71,38 @@ void FContentOrganizerModule::OpenGraphEditorForAsset(UContentOrganizerAsset* As
 {
 	GEditingAsset = Asset;
 
-	bool bOpened = FGlobalTabmanager::Get()->TryInvokeTab(ContentOrganizerTabName).IsValid();
-
-	// Se per qualunque motivo la tab non è stata aperta, pulisci il riferimento
-	/*if (!bOpened)
+	//ShowTab
+	TSharedPtr<SDockTab> OpenedTab = FGlobalTabmanager::Get()->TryInvokeTab(ContentOrganizerTabName);
+	
+	if (!OpenedTab.IsValid())
 	{
 		GEditingAsset = nullptr;
-	}*/
+		return;
+	}
+
+	OpenedTab->SetOnTabClosed(SDockTab::FOnTabClosedCallback::CreateLambda([](TSharedRef<SDockTab>)
+	{
+		UE_LOG(LogTemp, Display, TEXT("Content Organizer tab closed. Cleaning subsystem reference."));
+		
+		if (GEditor)
+		{
+			if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>())
+			{
+				Sub->ClearActiveGraph();
+			}
+		}
+		if (GEditor)
+		{
+			if (auto* AssetEditor = GEditor->GetEditorSubsystem<UAssetEditorSubsystem>())
+			{
+				
+				AssetEditor->CloseAllEditorsForAsset(GEditingAsset);
+			}
+		}
+
+		GEditingAsset = nullptr;
+	}));
+
 }
 
 // Invoked when the tab is spawned or re-opened
@@ -86,7 +113,7 @@ TSharedRef<SDockTab> FContentOrganizerModule::OnSpawnPluginTab(const FSpawnTabAr
 		UE_LOG(LogTemp, Warning, TEXT("No asset set when opening ContentOrganizer tab."));
 		return SNew(SDockTab).TabRole(ETabRole::NomadTab);
 	}
-
+	
 	TSharedRef<SDockTab> NewTab = CreateGraphEditorTab(GEditingAsset);
 
 	GEditingAsset = nullptr;
@@ -149,70 +176,71 @@ TSharedRef<SDockTab> FContentOrganizerModule::CreateGraphEditorTab(UContentOrgan
 	}
 
 	return SNew(SDockTab)
-		.TabRole(ETabRole::NomadTab)
-		/* .OnTabClosed(SDockTab::FOnTabClosedCallback::CreateLambda([](TSharedRef<SDockTab>)
-		{
-			GEditingAsset = nullptr;
-			if (GEditor)
+			.TabRole(ETabRole::NomadTab)
+			/* .OnTabClosed(SDockTab::FOnTabClosedCallback::CreateLambda([](TSharedRef<SDockTab>)
 			{
-				if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>())
+				GEditingAsset = nullptr;
+				if (GEditor)
 				{
-					Sub->ClearActiveGraph();
-				}
-			}
-		}))*/
-		[
-			SNew(SVerticalBox)
-
-			// -- Path + Button --
-			+ SVerticalBox::Slot().AutoHeight().Padding(4)
-			[
-				SNew(SHorizontalBox)
-				+ SHorizontalBox::Slot().AutoWidth()
-				[
-					SNew(STextBlock).Text(LOCTEXT("BasePathLabel", "Base Path:"))
-				]
-				+ SHorizontalBox::Slot().FillWidth(1.0f).Padding(4, 0)
-				[
-					SNew(SEditableTextBox)
-					.Text_Lambda([this]() { return FText::FromString(ScanBasePath); })
-					.OnTextCommitted_Lambda([this](const FText& NewText, ETextCommit::Type)
+					if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>())
 					{
-						ScanBasePath = NewText.ToString();
-						if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>())
+						Sub->ClearActiveGraph();
+					}
+				}
+			}))*/
+			[
+				SNew(SVerticalBox)
+
+				// -- Path + Button --
+				+ SVerticalBox::Slot().AutoHeight().Padding(4)
+				[
+					SNew(SHorizontalBox)
+					+ SHorizontalBox::Slot().AutoWidth()
+					[
+						SNew(STextBlock).Text(LOCTEXT("BasePathLabel", "Base Path:"))
+					]
+					+ SHorizontalBox::Slot().FillWidth(1.0f).Padding(4, 0)
+					[
+						SNew(SEditableTextBox)
+						.Text_Lambda([this]() { return FText::FromString(ScanBasePath); })
+						.OnTextCommitted_Lambda([this](const FText& NewText, ETextCommit::Type)
 						{
-							Sub->SetScanBasePath(ScanBasePath);
-						}
+							ScanBasePath = NewText.ToString();
+							if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<
+								UContentOrganizerSubsystem>())
+							{
+								Sub->SetScanBasePath(ScanBasePath);
+							}
+						})
+					]
+				]
+				+ SVerticalBox::Slot().AutoHeight().Padding(4)
+				[
+					SNew(SButton)
+					.Text(LOCTEXT("OrganizeContent", "Organize Content"))
+					.OnClicked_Lambda([this, Graph]()
+					{
+						UContentOrganizerLibrary::ApplyGraphRules(Graph, ScanBasePath);
+						return FReply::Handled();
 					})
 				]
-			]
-			+ SVerticalBox::Slot().AutoHeight().Padding(4)
-			[
-				SNew(SButton)
-				.Text(LOCTEXT("OrganizeContent", "Organize Content"))
-				.OnClicked_Lambda([this, Graph]()
-				{
-					UContentOrganizerLibrary::ApplyGraphRules(Graph, ScanBasePath);
-					return FReply::Handled();
-				})
-			]
 
-			// -- GraphEditor + Details --
-			+ SVerticalBox::Slot().FillHeight(1.0f)
-			[
-				SNew(SSplitter)
-
-				+ SSplitter::Slot().Value(0.7f)
+				// -- GraphEditor + Details --
+				+ SVerticalBox::Slot().FillHeight(1.0f)
 				[
-					GraphEditorWidget
-				]
+					SNew(SSplitter)
 
-				+ SSplitter::Slot().Value(0.3f)
-				[
-					DetailsView
+					+ SSplitter::Slot().Value(0.7f)
+					[
+						GraphEditorWidget
+					]
+
+					+ SSplitter::Slot().Value(0.3f)
+					[
+						DetailsView
+					]
 				]
-			]
-		];
+			];
 }
 
 void FContentOrganizerModule::CreateDefaultFolder(UContentOrganizerGraph* Graph)
@@ -291,15 +319,37 @@ UContentOrganizerGraph* FContentOrganizerModule::EnsureGraph(UContentOrganizerAs
 		UE_LOG(LogTemp, Error, TEXT("EnsureGraph: Asset is null."));
 		return nullptr;
 	}
-
-	if (!Asset->Graph)
+	//Check if GameNode is Valid
+	if (!Asset->Graph || Asset->Graph->Nodes.Num() == 0)
 	{
-		UContentOrganizerGraph* NewGraph = NewObject<UContentOrganizerGraph>(Asset);
-		NewGraph->Schema = UContentOrganizerSchema::StaticClass();
-		CreateDefaultFolder(NewGraph);
-		Asset->Graph = NewGraph;
-		Asset->Modify();
+		UE_LOG(LogTemp, Warning, TEXT("Creating new graph or default folder for asset %s"), *Asset->GetName());
+
+		if (!Asset->Graph)
+		{
+			Asset->Graph = NewObject<UContentOrganizerGraph>(Asset, UContentOrganizerGraph::StaticClass(), NAME_None,
+			                                                 RF_Transactional);
+			Asset->Graph->Schema = UContentOrganizerSchema::StaticClass();
+		}
+
+		if (Asset->Graph->Nodes.Num() == 0)
+		{
+			UFolderNode* RootNode = NewObject<UFolderNode>(Asset->Graph);
+			RootNode->TargetFolderName = TEXT("/Game");
+			RootNode->CreateNewGuid();
+			RootNode->bIsRoot = true;
+			RootNode->AllocateDefaultPins();
+			Asset->Graph->AddNode(RootNode);
+			RootNode->AutowireNewNode(nullptr);
+			RootNode->ReconstructNode();
+			RootNode->NodePosX = 0.0f;
+			RootNode->NodePosY = 0.0f;
+
+			Asset->Graph->NotifyGraphChanged();
+		}
 	}
+	Asset->Modify();
+	Asset->Graph->Modify();
+
 	return Asset->Graph;
 }
 

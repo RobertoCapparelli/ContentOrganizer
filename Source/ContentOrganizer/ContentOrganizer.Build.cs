@@ -45,6 +45,7 @@ public class ContentOrganizer : ModuleRules
 				"SlateCore",
 				"ToolMenus",
 				"Projects", 
+				"EditorScriptingUtilities",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

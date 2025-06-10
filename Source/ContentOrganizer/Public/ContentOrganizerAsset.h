@@ -15,4 +15,5 @@ class UContentOrganizerAsset : public UObject
 public:
 	UPROPERTY()
 	UContentOrganizerGraph* Graph;
+	//void PostInitProperties() override;
 };
