@@ -10,6 +10,10 @@
 A plugin for **Unreal Engine** that streamlines asset organization within your project using a graph-based interface.  
 Define filter and destination rules with “Folder” and “Filter” nodes, then automatically apply them to move, rename, and clean up assets (including redirectors).
 
+## Demo Video
+
+Watch an overview and walkthrough video here: https://youtu.be/KGWb_DrLgog?si=c92hUW75E8aeuCSH
+
 ## Key Features
 
 - **Graph-Based Workflow**: Build a visual graph where each node represents either a destination folder or a filter (by asset class and name pattern).  
