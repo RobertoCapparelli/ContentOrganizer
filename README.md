@@ -22,7 +22,7 @@ A plugin for **Unreal Engine** that streamlines asset organization within your p
 ## Demo Video
 
 Watch an overview and walkthrough video here:  
-https://youtu.be/KGWb_DrLgog?si=c92hUW75E8aeuCSH  
+[https://youtu.be/KGWb_DrLgog?si=c92hUW75E8aeuCSH](https://youtu.be/znyDyVESVYs?si=WLEbYoPT2BQ2e-So)  
 
 ## Installation
 
