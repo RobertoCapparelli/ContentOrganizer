@@ -268,7 +268,7 @@ TOptional<FString> UContentOrganizerLibrary::PromptForNewAssetName(const FAssetD
 
     TSharedRef<SWindow> Window = SNew(SWindow)
         .Title(Title)
-        .ClientSize(FVector2D(450, 140))
+    	.SizingRule(ESizingRule::Autosized)
         .SupportsMaximize(false)
         .SupportsMinimize(false)
         .IsPopupWindow(true)

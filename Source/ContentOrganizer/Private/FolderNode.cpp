@@ -55,12 +55,14 @@ void UFolderNode::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedE
 	if (PropertyChangedEvent.Property &&
 		PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UFolderNode, TargetFolderName))
 	{
-		ReconstructNode();
+		//ReconstructNode();
 		if (UEdGraph* Graph = GetGraph())
 		{
 			Graph->NotifyGraphChanged();
+			
 		}
 	}
 }
+
 #endif
 #undef LOCTEXT_NAMESPACE

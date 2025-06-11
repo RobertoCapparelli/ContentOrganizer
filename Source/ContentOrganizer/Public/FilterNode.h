@@ -16,7 +16,7 @@ public:
 
 #if WITH_EDITOR
 	virtual FLinearColor GetNodeTitleColor() const override;
-	//virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
 	UPROPERTY(EditAnywhere, Category = "Filter")
 	FString Prefix; //@TODO: Add the prefix
