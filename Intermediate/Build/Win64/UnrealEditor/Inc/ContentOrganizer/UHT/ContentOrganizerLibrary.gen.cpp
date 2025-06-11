@@ -25,6 +25,7 @@ struct Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics
 	{
 		UContentOrganizerGraph* Graph;
 		FString BasePath;
+		int32 ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -44,14 +45,17 @@ struct Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Graph;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_BasePath;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_Graph = { "Graph", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContentOrganizerLibrary_eventApplyGraphRules_Parms, Graph), Z_Construct_UClass_UContentOrganizerGraph_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_BasePath = { "BasePath", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContentOrganizerLibrary_eventApplyGraphRules_Parms, BasePath), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BasePath_MetaData), NewProp_BasePath_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ContentOrganizerLibrary_eventApplyGraphRules_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_Graph,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_BasePath,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UContentOrganizerLibrary, nullptr, "ApplyGraphRules", nullptr, nullptr, Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::PropPointers), sizeof(Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::ContentOrganizerLibrary_eventApplyGraphRules_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::Function_MetaDataParams), Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules_Statics::Function_MetaDataParams) };
@@ -71,7 +75,7 @@ DEFINE_FUNCTION(UContentOrganizerLibrary::execApplyGraphRules)
 	P_GET_PROPERTY(FStrProperty,Z_Param_BasePath);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	UContentOrganizerLibrary::ApplyGraphRules(Z_Param_Graph,Z_Param_BasePath);
+	*(int32*)Z_Param__Result=UContentOrganizerLibrary::ApplyGraphRules(Z_Param_Graph,Z_Param_BasePath);
 	P_NATIVE_END;
 }
 // End Class UContentOrganizerLibrary Function ApplyGraphRules
@@ -160,7 +164,7 @@ struct Z_Construct_UClass_UContentOrganizerLibrary_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules, "ApplyGraphRules" }, // 1668081415
+		{ &Z_Construct_UFunction_UContentOrganizerLibrary_ApplyGraphRules, "ApplyGraphRules" }, // 2458573673
 		{ &Z_Construct_UFunction_UContentOrganizerLibrary_ApplySingleAsset, "ApplySingleAsset" }, // 493044924
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -210,10 +214,10 @@ UContentOrganizerLibrary::~UContentOrganizerLibrary() {}
 struct Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_ContentOrganizerLibrary_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UContentOrganizerLibrary, UContentOrganizerLibrary::StaticClass, TEXT("UContentOrganizerLibrary"), &Z_Registration_Info_UClass_UContentOrganizerLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UContentOrganizerLibrary), 22477703U) },
+		{ Z_Construct_UClass_UContentOrganizerLibrary, UContentOrganizerLibrary::StaticClass, TEXT("UContentOrganizerLibrary"), &Z_Registration_Info_UClass_UContentOrganizerLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UContentOrganizerLibrary), 3530643958U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_ContentOrganizerLibrary_h_1685907453(TEXT("/Script/ContentOrganizer"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_ContentOrganizerLibrary_h_2417681379(TEXT("/Script/ContentOrganizer"),
 	Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_ContentOrganizerLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_ContentOrganizerLibrary_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

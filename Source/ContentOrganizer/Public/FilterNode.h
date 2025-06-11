@@ -10,10 +10,15 @@ class CONTENTORGANIZER_API UFilterNode : public UContentOrganizerNode
 	GENERATED_BODY()
 public:
 	virtual FText GetNodeTitle(ENodeTitleType::Type TitleType) const override;
+	
+	UPROPERTY(EditAnywhere, Category="Filter", meta=(DisplayName="Asset Type"))
+	TSubclassOf<UObject> AssetType;
 
+#if WITH_EDITOR
+	virtual FLinearColor GetNodeTitleColor() const override;
+	//virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
 	UPROPERTY(EditAnywhere, Category = "Filter")
-	TSubclassOf<UObject> AssetClassFilter;
+	FString Prefix; //@TODO: Add the prefix
 
-	UPROPERTY(EditAnywhere, Category = "Filter")
-	FString NamePattern; //@TODO: Add the prefix 
 };

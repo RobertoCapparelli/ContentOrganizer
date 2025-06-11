@@ -56,3 +56,22 @@ void UContentOrganizerSubsystem::ClearActiveGraph()
 {
 	ActiveGraph = nullptr;
 }
+
+void UContentOrganizerSubsystem::OrganizeContent(UContentOrganizerGraph* Graph, const FString& BasePath)
+{
+	if (!Graph)
+	{
+		UE_LOG(LogContentOrganizerSUBSYSTEM, Warning, TEXT("OrganizeContent: Graph null, abort."));
+		return;
+	}
+	//Get time
+	const double StartTime = FPlatformTime::Seconds();
+	
+	int32 MovedCount = UContentOrganizerLibrary::ApplyGraphRules(Graph, BasePath);
+
+	//Total Time
+	const double Elapsed = FPlatformTime::Seconds() - StartTime;
+	UE_LOG(LogContentOrganizerSUBSYSTEM, Display,
+		   TEXT("OrganizeContent completed in %.2f s"), Elapsed);
+	OnOrganizeComplete.Broadcast(Elapsed, MovedCount);
+}

@@ -1,0 +1,34 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\private\\filternodecustomization.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\intermediate\\build\\win64\\x64\\toolwidgetsexerciseseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\contentorganizer\\definitions.contentorganizer.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\filternodecustomization.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailcustomization.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\classviewer\\public\\classviewermodule.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\classviewer\\public\\classviewerfilter.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\classes\\settings\\classviewersettings.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\classviewersettings.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detaillayoutbuilder.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailpropertyrow.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailwidgetrow.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailcategorybuilder.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\idetailcustomnodebuilder.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\detailbuildertypes.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\propertyeditor\\public\\propertyeditorcopypaste.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\filternode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizernode.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizernode.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\filternode.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizerasset.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\source\\contentorganizer\\public\\contentorganizergraph.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizergraph.generated.h",
+            "c:\\users\\39345\\desktop\\progetti unreal\\toolwidgetsexercises\\plugins\\contentorganizer\\intermediate\\build\\win64\\unrealeditor\\inc\\contentorganizer\\uht\\contentorganizerasset.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -14,15 +14,16 @@ public:
 	
 	virtual void AllocateDefaultPins() override;
 	virtual FText GetNodeTitle(ENodeTitleType::Type TitleType) const override;
-	
 #if WITH_EDITOR
+	virtual FLinearColor GetNodeTitleColor() const override;
+	
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
 
 	UPROPERTY(EditAnywhere, Category = "Folder")
 	FString TargetPath; // Es: "/Game/Meshes/"
 
-
+	
 	bool bIsRoot = false;
 private:
 };

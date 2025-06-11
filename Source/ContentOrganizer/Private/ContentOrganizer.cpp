@@ -7,17 +7,21 @@
 #include "ContentOrganizerLibrary.h"
 #include "ContentOrganizerSchema.h"
 #include "ContentOrganizerSubsystem.h"
+#include "FilterNode.h"
+#include "FilterNodeCustomization.h"
 #include "GraphEditor.h"
 #include "FolderNode.h"
 #include "PropertyEditorModule.h"
 #include "IDetailsView.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Framework/Commands/GenericCommands.h"
+#include "Framework/Notifications/NotificationManager.h"
 #include "Interfaces/IPluginManager.h"
 #include "Modules/ModuleManager.h"
 #include "Styling/SlateStyleRegistry.h"
 #include "UObject/ReferenceChainSearch.h"
 #include "UObject/GarbageCollection.h"
+#include "Widgets/Notifications/SNotificationList.h"
 
 #define LOCTEXT_NAMESPACE "FContentOrganizerModule"
 
@@ -40,6 +44,7 @@ void FContentOrganizerModule::StartupModule()
 	                        .SetDisplayName(LOCTEXT("TabTitle", "Content Organizer"))
 	                        .SetMenuType(ETabSpawnerMenuType::Hidden);
 
+
 	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
 	//AssetTools.RegisterAssetTypeActions(MakeShareable(new FAta_ContentOrganizer()));
 
@@ -53,6 +58,12 @@ void FContentOrganizerModule::StartupModule()
 	//Register for the asset ContentOrganizer
 	FCOAssetActionsRegistrar::Register(AssetCategory);
 
+	FPropertyEditorModule& PropModule = FModuleManager::LoadModuleChecked<FPropertyEditorModule>("PropertyEditor");
+
+	PropModule.RegisterCustomClassLayout(
+		UFilterNode::StaticClass()->GetFName(),
+		FOnGetDetailCustomizationInstance::CreateStatic(&FFilterNodeCustomization::MakeInstance));
+
 	//SlateIcon
 	InitializeSlateStyle();
 }
@@ -63,6 +74,8 @@ void FContentOrganizerModule::ShutdownModule()
 	UToolMenus::UnRegisterStartupCallback(this);
 	UToolMenus::UnregisterOwner(this);
 	FCOAssetActionsRegistrar::Unregister();
+	FPropertyEditorModule& PropModule = FModuleManager::GetModuleChecked<FPropertyEditorModule>("PropertyEditor");
+	PropModule.UnregisterCustomClassLayout(UFilterNode::StaticClass()->GetFName());
 	ShutdownSlateStyle();
 }
 
@@ -73,7 +86,7 @@ void FContentOrganizerModule::OpenGraphEditorForAsset(UContentOrganizerAsset* As
 
 	//ShowTab
 	TSharedPtr<SDockTab> OpenedTab = FGlobalTabmanager::Get()->TryInvokeTab(ContentOrganizerTabName);
-	
+
 	if (!OpenedTab.IsValid())
 	{
 		GEditingAsset = nullptr;
@@ -83,7 +96,7 @@ void FContentOrganizerModule::OpenGraphEditorForAsset(UContentOrganizerAsset* As
 	OpenedTab->SetOnTabClosed(SDockTab::FOnTabClosedCallback::CreateLambda([](TSharedRef<SDockTab>)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Content Organizer tab closed. Cleaning subsystem reference."));
-		
+
 		if (GEditor)
 		{
 			if (UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>())
@@ -95,14 +108,12 @@ void FContentOrganizerModule::OpenGraphEditorForAsset(UContentOrganizerAsset* As
 		{
 			if (auto* AssetEditor = GEditor->GetEditorSubsystem<UAssetEditorSubsystem>())
 			{
-				
 				AssetEditor->CloseAllEditorsForAsset(GEditingAsset);
 			}
 		}
 
 		GEditingAsset = nullptr;
 	}));
-
 }
 
 // Invoked when the tab is spawned or re-opened
@@ -113,7 +124,7 @@ TSharedRef<SDockTab> FContentOrganizerModule::OnSpawnPluginTab(const FSpawnTabAr
 		UE_LOG(LogTemp, Warning, TEXT("No asset set when opening ContentOrganizer tab."));
 		return SNew(SDockTab).TabRole(ETabRole::NomadTab);
 	}
-	
+
 	TSharedRef<SDockTab> NewTab = CreateGraphEditorTab(GEditingAsset);
 
 	GEditingAsset = nullptr;
@@ -138,12 +149,16 @@ TSharedRef<SDockTab> FContentOrganizerModule::CreateGraphEditorTab(UContentOrgan
 	// Wire up selection changed
 	SGraphEditor::FGraphEditorEvents GraphEvents;
 	GraphEvents.OnSelectionChanged = SGraphEditor::FOnSelectionChanged::CreateLambda(
-		[DetailsView](const TSet<UObject*>& Selected)
+		[DetailsView, Asset](const TSet<UObject*>& Selected)
 		{
 			if (Selected.Num() > 0)
+			{
 				DetailsView->SetObject(*Selected.CreateConstIterator());
+			}
 			else
-				DetailsView->SetObject(nullptr);
+			{
+				DetailsView->SetObject(Asset);
+			}
 		}
 	);
 
@@ -174,7 +189,7 @@ TSharedRef<SDockTab> FContentOrganizerModule::CreateGraphEditorTab(UContentOrgan
 			Sub->SetScanBasePath(ScanBasePath);
 		}
 	}
-
+	UContentOrganizerSubsystem* Sub = GEditor->GetEditorSubsystem<UContentOrganizerSubsystem>();
 	return SNew(SDockTab)
 			.TabRole(ETabRole::NomadTab)
 			/* .OnTabClosed(SDockTab::FOnTabClosedCallback::CreateLambda([](TSharedRef<SDockTab>)
@@ -218,9 +233,40 @@ TSharedRef<SDockTab> FContentOrganizerModule::CreateGraphEditorTab(UContentOrgan
 				[
 					SNew(SButton)
 					.Text(LOCTEXT("OrganizeContent", "Organize Content"))
-					.OnClicked_Lambda([this, Graph]()
+					.OnClicked_Lambda([Sub, Graph, this]()
 					{
-						UContentOrganizerLibrary::ApplyGraphRules(Graph, ScanBasePath);
+						Sub->OnOrganizeComplete.Clear();
+
+						Sub->OnOrganizeComplete.AddLambda([this](double Elapsed, int32 MovedCount)
+						{
+							if (MovedCount > 0)
+							{
+								//Success
+								FNotificationInfo Info(
+									FText::Format(LOCTEXT("OrganizeDone",
+									                      "Organize complete in  {0:.2f} \nMoved {1} asset"),
+									              Elapsed, MovedCount)
+								);
+								Info.bFireAndForget = true;
+								Info.FadeOutDuration = 5.0f;
+								Info.FadeInDuration = 1.f;
+								Info.Image = new FSlateImageBrush(
+									StyleSet->RootToContentDir(TEXT("IconContentOrganizer"), TEXT(".png")),
+									FVector2D(16, 16));
+
+								FSlateNotificationManager::Get().AddNotification(Info);
+							}
+							else
+							{
+								//Error
+								FMessageDialog::Open(EAppMsgType::Ok,
+								                     LOCTEXT("OrganizeError",
+								                             "ERROR: No asset to move"));
+							}
+						});
+
+						//Organize
+						Sub->OrganizeContent(Graph, ScanBasePath);
 						return FReply::Handled();
 					})
 				]
@@ -375,7 +421,7 @@ void FContentOrganizerModule::InitializeSlateStyle()
 			StyleSet->RootToContentDir(TEXT("IconContentOrganizer"), TEXT(".png")),
 			FVector2D(128, 128)
 		)
-	);
+	);//ReconstructNode()
 	//For icon 
 	StyleSet->Set(
 		"ClassIcon.ContentOrganizerAsset",

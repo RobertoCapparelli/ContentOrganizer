@@ -42,4 +42,5 @@ private:
 	static EAssetTypeCategories::Type AssetCategory;
 #endif
 
+
 };

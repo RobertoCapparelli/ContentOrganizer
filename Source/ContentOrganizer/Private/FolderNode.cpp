@@ -35,6 +35,14 @@ FText UFolderNode::GetNodeTitle(ENodeTitleType::Type TitleType) const
 	}
 	return LOCTEXT("FolderNode_DefaultTitle", "Folder");
 }
+#if WITH_EDITOR
+
+FLinearColor UFolderNode::GetNodeTitleColor() const
+{
+	    //Dark green
+	    return FLinearColor(0.0f, 0.6f, 0.1f);
+	}
+
 void UFolderNode::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
@@ -54,5 +62,5 @@ void UFolderNode::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedE
 		}
 	}
 }
-
+#endif
 #undef LOCTEXT_NAMESPACE

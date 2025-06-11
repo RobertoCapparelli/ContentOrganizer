@@ -11,6 +11,8 @@
  * there's crash when a new asset is importend, the problem is because when the asset are renomenate Unreal "reimporte"
  * the asset and active again the call
  */
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOnOrganizeComplete, double /*ElapsedSeconds*/, int32 /*MovedCount*/);
+
 UCLASS()
 class CONTENTORGANIZER_API UContentOrganizerSubsystem : public UEditorSubsystem
 {
@@ -21,6 +23,7 @@ public:
 
 	//Define the current graph
 	void SetActiveGraph(UContentOrganizerGraph* InGraph);
+	void ClearActiveGraph();
 
 	UPROPERTY()
 	FString ScanBasePath;
@@ -30,8 +33,10 @@ public:
 	{
 		ScanBasePath = NewBasePath;
 	}
-
-	void ClearActiveGraph();
+	UFUNCTION()
+	void OrganizeContent(UContentOrganizerGraph* Graph, const FString& BasePath);
+	
+	FOnOrganizeComplete OnOrganizeComplete;
 private:
 
 	FDelegateHandle OnAssetAddedHandle;

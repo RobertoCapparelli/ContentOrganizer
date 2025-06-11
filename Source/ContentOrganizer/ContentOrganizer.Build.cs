@@ -46,6 +46,7 @@ public class ContentOrganizer : ModuleRules
 				"ToolMenus",
 				"Projects", 
 				"EditorScriptingUtilities",
+				"ApplicationCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

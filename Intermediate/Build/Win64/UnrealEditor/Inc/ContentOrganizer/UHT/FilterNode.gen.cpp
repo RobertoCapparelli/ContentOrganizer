@@ -34,17 +34,18 @@ struct Z_Construct_UClass_UFilterNode_Statics
 		{ "IncludePath", "FilterNode.h" },
 		{ "ModuleRelativePath", "Public/FilterNode.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AssetClassFilter_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AssetType_MetaData[] = {
 		{ "Category", "Filter" },
+		{ "DisplayName", "Asset Type" },
 		{ "ModuleRelativePath", "Public/FilterNode.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NamePattern_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Prefix_MetaData[] = {
 		{ "Category", "Filter" },
 		{ "ModuleRelativePath", "Public/FilterNode.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FClassPropertyParams NewProp_AssetClassFilter;
-	static const UECodeGen_Private::FStrPropertyParams NewProp_NamePattern;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_AssetType;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_Prefix;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -52,11 +53,11 @@ struct Z_Construct_UClass_UFilterNode_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UFilterNode_Statics::NewProp_AssetClassFilter = { "AssetClassFilter", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFilterNode, AssetClassFilter), Z_Construct_UClass_UClass, Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AssetClassFilter_MetaData), NewProp_AssetClassFilter_MetaData) };
-const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UFilterNode_Statics::NewProp_NamePattern = { "NamePattern", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFilterNode, NamePattern), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NamePattern_MetaData), NewProp_NamePattern_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UFilterNode_Statics::NewProp_AssetType = { "AssetType", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFilterNode, AssetType), Z_Construct_UClass_UClass, Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AssetType_MetaData), NewProp_AssetType_MetaData) };
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UFilterNode_Statics::NewProp_Prefix = { "Prefix", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFilterNode, Prefix), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Prefix_MetaData), NewProp_Prefix_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFilterNode_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFilterNode_Statics::NewProp_AssetClassFilter,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFilterNode_Statics::NewProp_NamePattern,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFilterNode_Statics::NewProp_AssetType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFilterNode_Statics::NewProp_Prefix,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFilterNode_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UFilterNode_Statics::DependentSingletons[])() = {
@@ -100,10 +101,10 @@ UFilterNode::~UFilterNode() {}
 struct Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_FilterNode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFilterNode, UFilterNode::StaticClass, TEXT("UFilterNode"), &Z_Registration_Info_UClass_UFilterNode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFilterNode), 1764133961U) },
+		{ Z_Construct_UClass_UFilterNode, UFilterNode::StaticClass, TEXT("UFilterNode"), &Z_Registration_Info_UClass_UFilterNode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFilterNode), 2087090466U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_FilterNode_h_989055626(TEXT("/Script/ContentOrganizer"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_FilterNode_h_1449240115(TEXT("/Script/ContentOrganizer"),
 	Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_FilterNode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_39345_Desktop_Progetti_Unreal_ToolWidgetsExercises_Plugins_ContentOrganizer_Source_ContentOrganizer_Public_FilterNode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

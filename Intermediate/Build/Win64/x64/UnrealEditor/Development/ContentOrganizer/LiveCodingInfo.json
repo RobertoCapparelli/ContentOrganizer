@@ -23,6 +23,7 @@
 			"ContentOrganizerSchema.cpp.obj",
 			"ContentOrganizerSubsystem.cpp.obj",
 			"FilterNode.cpp.obj",
+			"FilterNodeCustomization.cpp.obj",
 			"FolderNode.cpp.obj",
 			"ContentOrganizerGraphNode.cpp.obj",
 			"ContentOrganizerNodeFactory.cpp.obj"
