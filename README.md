@@ -1,18 +1,15 @@
-> **Work in Progress:** This plugin is still under construction and many features remain to be implemented, such as:
-> - Filtering by asset types within the **Filter** node  
-> - Tagging assets to route them into specific folders  
-> - Handling rename conflicts when two assets share the same name  
->
-> It was created as an R&D prototype rather than a finished tool. This is my first foray into a custom graph system, and if there’s interest this project will be actively developed further. Any contributions are welcome—after review, commits will be gratefully accepted. Thank you for your interest!
-
 # Content Organizer
 
-A plugin for **Unreal Engine** that streamlines asset organization within your project using a graph-based interface.  
-Define filter and destination rules with “Folder” and “Filter” nodes, then automatically apply them to move, rename, and clean up assets (including redirectors).
+A plugin for **Unreal Engine** that streamlines asset organization within your project using a graph-based interface. Define filter and destination rules with “Folder” and “Filter” nodes, then automatically apply them to move, rename (including adding configurable prefixes), handle naming conflicts for assets sharing the same name, and clean up redirectors.
 
-## Demo Video
+## Table of Contents
 
-Watch an overview and walkthrough video here: https://youtu.be/KGWb_DrLgog?si=c92hUW75E8aeuCSH
+- Key Features  
+- Demo Video  
+- Installation  
+- Usage  
+- Work in Progress  
+- Contributing  
 
 ## Key Features
 
@@ -20,21 +17,35 @@ Watch an overview and walkthrough video here: https://youtu.be/KGWb_DrLgog?si=c9
 - **Recursive Scanning**: Automatically scan all assets under a configurable root path (default: `/Game`).  
 - **Safe Relocation**: Rename and move assets according to your rules, skipping any already correctly organized.  
 - **Redirector Cleanup**: At the end of the process, fix and remove orphaned redirectors.  
-- **Editor UI**: Custom editor panel with drag-and-drop support, parameter details, and full undo/redo.
+- **Editor UI**: Custom editor panel with drag-and-drop support, parameter details, and full undo/redo.  
+
+## Demo Video
+
+Watch an overview and walkthrough video here:  
+https://youtu.be/KGWb_DrLgog?si=c92hUW75E8aeuCSH  
 
 ## Installation
 
 1. Copy the `ContentOrganizer` folder into `YourProject/Plugins/`.  
 2. Open your project in Unreal Engine and enable the **Content Organizer** plugin in the Plugins settings.  
-3. From the main menu, go to **Window → Content Organizer** to open the panel and start building your rule graph.
+3. From the main menu, go to **Window → Content Organizer** to open the panel and start building your rule graph.  
 
 ## Usage
 
 1. Add a **Folder** node for each target directory.  
 2. Add a **Filter** node and set the asset class and name pattern.  
 3. Connect filters to folders using the “In”/“Out” pins.  
-4. Click **Organize Content** to apply your rules.
+4. Click **Organize Content** to apply your rules.  
 
----
+## Work in Progress
 
-**Content Organizer** helps keep your Content Browser tidy and consistent—perfect for large-scale projects with hundreds or thousands of assets.  
+This plugin is under active development. Planned features include:
+
+- Selecting asset types directly within each **Filter** node (blueprints, textures, materials, etc.)  
+- Tagging and metadata for routing assets into specific folders  
+- Progress reporting and completion notifications within the editor UI  
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any bugs, enhancements, or feature requests. All commits will be reviewed; thank you for helping improve Content Organizer.  
+
